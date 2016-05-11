@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EasyEatCC</string>
+    <string name="action_edit">edit</string>
+    <string name="action_settings">setting</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+
+    <string name="user"> User</string>
+    <string name="order"> Order</string>
+
+    <string name="select_desire">Select your meals</string>
+</resources>

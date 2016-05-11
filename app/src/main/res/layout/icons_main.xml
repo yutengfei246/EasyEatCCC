@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp">
+
+    <TextView
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_desire"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/colorBlack"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_title">
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/deals"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/dessert"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/menu"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/pasta"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ll_view"
+        android:layout_below="@id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_view">
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pizza"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/seafood"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/special"/>
+
+        <ImageView
+            android:padding="2dp"
+            android:id="@+id/icon_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/vege"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

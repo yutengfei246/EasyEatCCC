@@ -1,0 +1,15 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- dimens for the gridView in Activity_main.xml -->
+    <dimen name="columnWidth">380dp</dimen>
+    <dimen name="horizontalSpacing">10dp</dimen>
+    <dimen name="verticalSpacing">10dp</dimen>
+
+    <!-- diments listview divider -->
+    <dimen name="listview_divider" > 4dp</dimen>
+
+    <dimen name="text_size">18dp</dimen>
+
+</resources>
