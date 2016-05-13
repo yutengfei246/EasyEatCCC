@@ -3,15 +3,18 @@ package com.example.yutengfei.easyeatccc;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.example.yutengfei.easyeatccc.Utils.FileManager;
 import com.example.yutengfei.easyeatccc.Utils.MainArrayAdapter;
 
 
@@ -23,14 +26,20 @@ public class MainActivity extends AppCompatActivity {
 
     private MainArrayAdapter  adapter;
     private List<MainPageItems> listData;
+    private FileManager fileManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
+        /*Now used for create Dir and files */
+        fileManager = new FileManager();
+        fileManager.initFile();
+
         /*Toolbar */
-        Toolbar tb = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         tb.setTitle("Easy Eat");
         tb.setSubtitle("esercizi trovati");
         setSupportActionBar(tb);
@@ -38,20 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
         /*implement listview*/
         /*inital MainPageItems*/
-
         this.initalListData();
-        adapter = new MainArrayAdapter(this,R.layout.activity_main_listview_item,this.listData);
 
-        ListView lv = (ListView)findViewById(R.id.activity_main_listView);
+        adapter = new MainArrayAdapter(this, R.layout.activity_main_listview_item, this.listData);
+
+        ListView lv = (ListView) findViewById(R.id.activity_main_listView);
         lv.setAdapter(this.adapter);
 
-    }
+        Log.d("MainActivity", "Oncreate()");
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        listData = null ;
     }
 
     @Override
@@ -100,12 +104,22 @@ public class MainActivity extends AppCompatActivity {
         iconsItems.setIcons(R.drawable.pasta);
 
         this.listData.add(iconsItems);
+
+        /*Add Recommand files*/
+        MainPageItems fileItems  = new MainPageItems(IS_RECOMMAND_RESTAURANT);
+        try {
+            fileItems.setMenuFile(this.fileManager.getRestaurant(FileManager.RESTAURANT_RECOMMEND));
+        }catch (Exception e){}
+
+        this.listData.add(fileItems);
+        Log.d("MainActivity", "initialListData() ");
     }
 
     public class MainPageItems {
 
         private int theType;
         private List<Integer> icons;
+        private File menuFile;
 
         /*Restrant list*/
         //private List<RecommandRestanrant> restanrants;
@@ -113,6 +127,18 @@ public class MainActivity extends AppCompatActivity {
         public MainPageItems(int theType){
             this.theType = theType;
             icons = new ArrayList<>();
+        }
+
+        public void setMenuFile(File menuFile) {
+            this.menuFile = menuFile;
+        }
+
+        public void setTheType(int theType) {
+            this.theType = theType;
+        }
+
+        public File getMenuFile() {
+            return menuFile;
         }
 
         public int getTheType(){

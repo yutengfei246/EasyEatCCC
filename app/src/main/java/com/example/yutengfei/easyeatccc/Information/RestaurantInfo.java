@@ -10,17 +10,27 @@ public class RestaurantInfo {
     private String time;
     private String description;
     private Float distance;
+    private int Id;
 
 
     public RestaurantInfo(){
-        this(null,null,null,null);
+        this(null,null,null,null,0);
     }
 
-    public RestaurantInfo(String name , String type ,String time, String description){
+    public RestaurantInfo(String name , String type ,String time, String description, int Id){
         this.name = name ;
         this.type = type ;
         this.time = time ;
         this.description = description ;
+        this.Id = Id;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {

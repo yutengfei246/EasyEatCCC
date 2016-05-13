@@ -10,4 +10,18 @@
     <string name="order"> Order</string>
 
     <string name="select_desire">Select your meals</string>
+    <string name="recommend_restaurant">Recommend Rest and Pub</string>
+    <string name="menu">menu</string>
+
+
+
+    <!--customer tag-->
+    <string name="toolbar_bottom_main">main</string>
+    <string name="toolbar_bottom_order">order</string>
+    <string name="toolbar_bottom_admin">admin</string>
+
+    <!--order food activity-->
+    <string name="order_finish">done</string>
+    <string name="totalPrice">TOTAL</string>
+    <string name="totalNum"></string>
 </resources>
